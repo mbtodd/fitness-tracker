@@ -3,7 +3,7 @@ import {
   MatButtonModule,
   MatIconModule,
   MatFormFieldModule,
-  MatInputModule,
+  MatInputModule
 } from '@angular/material';
 
 @NgModule({
