@@ -1,0 +1,19 @@
+<div class="signup-form">
+  <form fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" #f="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input type="email" ngModel name="email" email matInput placeholder="Email" required #emailInput="ngModel">
+      <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid</mat-error>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Min 6 characters">
+      <input type="password" ngModel name="password" matInput #input minlength="6" placeholder="Password" required>
+      <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
+    </mat-form-field>
+
+  </form>
+  <div>
+    <button fxLayoutAlign="center center" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+  </div>
+
+</div>
